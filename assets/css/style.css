@@ -1,0 +1,547 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #ffe6ee, #fff7fa);
+  color: #444;
+  overflow: hidden;
+}
+
+.page {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  padding: 20px;
+}
+
+.page.active {
+  display: block;
+}
+
+.card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: auto;
+}
+
+button {
+  background: #ff8fb1;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:hover {
+  background: #ff6f9e;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 80%;
+}
+
+video {
+  max-width: 250px;
+  margin: 20px auto;
+}
+
+.bgimg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+}
+
+.overlay {
+  max-width: 200px;
+}
+
+.small {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ---------- FIX PAGE 3 CLICK ISSUE ---------- */
+
+/* Ensure text & buttons are above everything */
+#page3 h1,
+#page3 p,
+#page3 button {
+  position: relative;
+  z-index: 10;
+}
+
+/* Prevent images/videos from blocking clicks */
+#page3 video,
+#page3 img {
+  pointer-events: none;
+}
+
+/* Optional: make button feel premium */
+button {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 143, 177, 0.4);
+}
+
+/* -------- PIN WINDOW PAGE 1 -------- */
+
+.pin-window {
+  width: 1300px;
+  max-width: 100%;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  margin: auto;
+  overflow: hidden;
+}
+
+.pin-header {
+  background: #f7c6d9;
+  padding: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.pin-content {
+  display: flex;
+}
+
+.pin-left {
+  width: 50%;
+}
+
+.pin-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pin-right {
+  width: 50%;
+  padding: 25px;
+  text-align: center;
+}
+
+.pin-right input {
+  width: 90%;
+  margin: 15px auto;
+}
+
+.pin-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.pin-buttons button {
+  background: #ffd6e5;
+  color: #444;
+  font-weight: bold;
+}
+
+.unlock-btn {
+  background: #ff8fb1;
+  width: 100%;
+}
+
+/* -------- PAGE 5 YES / NO GAME -------- */
+
+.choice-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+#yesBtn {
+  background: #4caf50;
+  font-size: 24px;
+  padding: 20px 40px;
+}
+
+#noBtn {
+  background: #e53935;
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+#convinceText {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+/* ////////////////////////////// */
+/* -------- PAGE 4 LETTERS -------- */
+
+#page4 h1 {
+  margin-bottom: 20px;
+}
+
+.letters-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.letter {
+  background: #c94f6d;
+  color: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.letter:hover {
+  transform: scale(1.05);
+}
+
+.letter-content {
+  display: none;
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.letter-content h2 {
+  margin-bottom: 15px;
+}
+
+/* -------- ENVELOPE ANIMATION -------- */
+
+.envelope {
+  position: relative;
+  background: #c94f6d;
+  color: white;
+  padding: 40px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.envelope p {
+  margin-top: 40px;
+  font-weight: 600;
+}
+
+/* flap */
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: #b8435f;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  transition: transform 0.6s ease;
+}
+
+/* wax seal */
+.seal {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+/* open animation */
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .seal {
+  transform: scale(0);
+  opacity: 0;
+}
+
+/* letter paper */
+.letter-content img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* -------- BURNING WAX EFFECT -------- */
+
+.seal {
+  z-index: 3;
+  filter: drop-shadow(0 0 0 rgba(255, 80, 80, 0));
+}
+
+/* crack layer */
+.wax-crack {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 45px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 10%,
+    transparent 60%
+  );
+  opacity: 0;
+  z-index: 4;
+}
+
+/* heat + glow */
+.envelope.burn .seal {
+  animation: waxHeat 0.6s ease-in-out forwards;
+}
+
+/* crack appears */
+.envelope.burn .wax-crack {
+  animation: waxCrack 0.5s ease forwards;
+}
+
+/* melt away */
+.envelope.open .seal {
+  animation: waxMelt 0.5s ease forwards;
+}
+
+/* keyframes */
+@keyframes waxHeat {
+  0% {
+    transform: translateX(-50%) scale(1);
+    filter: none;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+    filter: drop-shadow(0 0 10px rgba(255, 80, 80, 0.9));
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes waxCrack {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes waxMelt {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+  }
+}
+/* centrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrre */
+.page.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------- FINAL GIFT PAGE -------- */
+
+#page7 {
+  background: linear-gradient(135deg, #ffd6e5, #ffeef4);
+}
+
+.gift-img {
+  width: 120px;
+  margin: 20px auto;
+}
+
+.open-gift-btn {
+  background: #ff5f9e;
+  padding: 12px 30px;
+  font-size: 16px;
+}
+
+#giftBox {
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.final-letter {
+  display: none;
+  max-width: 520px;
+  margin: auto;
+  background: #fff6e5;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.8s ease forwards;
+}
+
+.letter-body {
+  display: flex;
+  gap: 15px;
+  text-align: left;
+}
+
+.letter-sticker {
+  width: 80px;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== LETTER BOOK ===== */
+
+.letter-book {
+  background: #fff6e5;
+  max-width: 720px;
+  margin: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+}
+
+.letter-header {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.letter-pages {
+  display: flex;
+  background: #fff3dc;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.letter-left,
+.letter-right {
+  width: 45%;
+}
+
+.letter-left {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.letter-left img {
+  width: 140px;
+}
+
+.letter-divider {
+  width: 4px;
+  background: #f2c94c;
+  margin: 0 15px;
+  border-radius: 5px;
+}
+
+.letter-right {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+/*              11111111111111111111111111111111111111111 */
+
+/* -------- PAGE 3 NEW LAYOUT -------- */
+
+.love-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 60px;
+  gap: 40px;
+}
+
+/* LEFT BOX */
+.love-box {
+  background: #fff7c7;
+  padding: 35px;
+  border-radius: 20px;
+  width: 45%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.love-box h2 {
+  margin-bottom: 15px;
+}
+
+.love-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 160px;
+}
+
+/* RIGHT TREE */
+.tree-box {
+  width: 45%;
+  text-align: center;
+}
+
+.tree-box img {
+  max-height: 420px;
+  width: auto;
+}
+
+/* COUNTER */
+.counter {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .love-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .love-box,
+  .tree-box {
+    width: 100%;
+  }
+}

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>To My Love 💗</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="page active" id="page1">
+      <div class="pin-window">
+        <div class="pin-header">To my kitty Akshra ♡</div>
+
+        <div class="pin-content">
+          <div class="pin-left">
+            <img src="assets/media/7.jpeg" alt="Coffee Love" />
+          </div>
+
+          <div class="pin-right">
+            <p class="small">
+              Hints are already dropped on whatsapp—come on, decode them, my
+              dear 😌✨😉
+            </p>
+
+            <input type="password" id="pin" placeholder="Enter PIN" />
+
+            <div class="pin-buttons">
+              <button onclick="addPin('1')">1</button>
+              <button onclick="addPin('2')">2</button>
+              <button onclick="addPin('3')">3</button>
+              <button onclick="addPin('4')">4</button>
+              <button onclick="addPin('5')">5</button>
+              <button onclick="addPin('6')">6</button>
+              <button onclick="addPin('7')">7</button>
+              <button onclick="addPin('8')">8</button>
+              <button onclick="addPin('9')">9</button>
+              <button onclick="addPin('0')">0</button>
+            </div>
+
+            <button class="unlock-btn" onclick="checkPin()">Unlock 💗</button>
+            <p id="pinMsg" class="small"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page" id="page2">
+      <video src="assets/media/3.mp4" autoplay loop muted></video>
+      <h1>Hey…</h1>
+      <p>
+        I know I’m late, and maybe aap naraj bhi hoge mujhse ....<br />
+        I also don’t feel like I even deserve to talk to you right now… but my
+        heart still tried to do something for you.<br />
+        Please, at least take a look.
+      </p>
+      <button onclick="nextPage(3)">Okay 👀</button>
+    </div>
+
+    <div class="page" id="page3">
+      <div class="love-layout">
+        <div class="love-box">
+          <h2>I Will Love You 💗</h2>
+          <p id="typeText"></p>
+
+          <div class="counter">
+            <h3>Stars and Moon together for</h3>
+            <div id="timer"></div>
+          </div>
+
+          <button onclick="nextPage(4)">Continue 💞</button>
+        </div>
+
+        <div class="tree-box">
+          <img src="assets/media/tree1.jpeg" alt="Love Tree" />
+          <video src="assets/media/tree.mp4" autoplay loop muted></video>
+        </div>
+      </div>
+    </div>
+
+    <div class="page" id="page4">
+      <h1>Open when… 💌</h1>
+
+      <!-- ✅ FIXED POSITION: NEXT BUTTON MOVED HERE -->
+      <button
+        id="nextFromLetters"
+        onclick="nextPage(5)"
+        style="display: none; margin: 15px auto 25px"
+      >
+        Next 💗
+      </button>
+
+      <div class="letters-grid" id="lettersGrid">
+        <div class="envelope" onclick="openLetter(0)">
+          <div class="flap"></div>
+          <div class="wax-crack"></div>
+          <p>Open when you missed me 💗</p>
+        </div>
+
+        <div class="envelope" onclick="openLetter(1)">
+          <div class="flap"></div>
+          <div class="wax-crack"></div>
+          <p>Open when you are sad 😢</p>
+        </div>
+
+        <div class="envelope" onclick="openLetter(2)">
+          <div class="flap"></div>
+          <div class="wax-crack"></div>
+          <p>Open when you need my full attention 💗💗</p>
+        </div>
+
+        <div class="envelope" onclick="openLetter(3)">
+          <div class="flap"></div>
+          <div class="wax-crack"></div>
+          <p>Open when you need a smile 😊</p>
+        </div>
+      </div>
+
+      <div class="letter-content" id="letterContent">
+        <img id="letterImg" />
+        <h2 id="letterTitle"></h2>
+        <p id="letterText"></p>
+        <button onclick="closeLetter()">⬅ Back</button>
+      </div>
+    </div>
+
+    <div class="page" id="page5">
+      <video src="assets/media/8.mp4" autoplay loop muted></video>
+
+      <h1>
+        If your 14th of February is free for me, I’m thinking of stealing you
+        for the entire day… and maybe longer. So tell me, kya aap allow karenge?
+        😉💖
+      </h1>
+
+      <div class="choice-box">
+        <button id="yesBtn" onclick="nextPage(6)">YES 💖</button>
+        <button id="noBtn" onclick="noClicked()">No 😢</button>
+      </div>
+
+      <p id="convinceText" class="small"></p>
+    </div>
+
+    <div class="page" id="page6">
+      <h1 id="finalQuestion">
+        One last thing I want to share with you…<br />
+        Would you wanna listen? 💭
+      </h1>
+
+      <video
+        id="finalImg"
+        src="assets/media/4.mp4"
+        style="width: 200px; margin: 20px auto; display: block"
+        autoplay
+        loop
+        muted
+      ></video>
+
+      <div class="choice-box">
+        <button id="finalYesBtn" onclick="finalYes()">
+          Umm… okay, let’s see what you want to say 💗
+        </button>
+
+        <button id="finalNoBtn" onclick="finalNo()">Nope stil gussa 😐</button>
+      </div>
+
+      <div id="finalLetter" class="letter-book" style="display: none">
+        <div class="letter-header">To You 💌</div>
+
+        <div class="letter-pages">
+          <div class="letter-left">
+            <video src="assets/media/8.mp4" autoplay loop muted></video>
+            <video src="assets/media/1.mp4" autoplay loop muted></video>
+            <video src="assets/media/5.mp4" autoplay loop muted></video>
+          </div>
+
+          <div class="letter-divider"></div>
+
+          <div class="letter-right">
+            <p><b>Dear Sunshine,</b></p>
+            <p>
+              I don’t really know how to put everything into perfect words. I
+              don’t know why I’m not good at these things, but mai ek chiz for
+              sure janta hu that you really matter to me a lot. And I want you
+              for my own. I don’t want to share someone precious like you with
+              anyone else, not even for a single moment.
+            </p>
+            <p>
+              It’s true, I don’t deserve you—you are much better than me. But
+              even then, I will still run for you. Even if you stop seeing me, I
+              will still care.
+            </p>
+            <p>
+              You are my forever,<br />
+              my reason 💗
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="clickSound" src="assets/sounds/click.mp3" preload="auto"></audio>
+
+    <script src="assets/js/script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const clickSound = document.getElementById("clickSound");
+        document.body.addEventListener("click", (e) => {
+          if (e.target.closest("button")) {
+            clickSound.currentTime = 0;
+            clickSound.play();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
