@@ -201,7 +201,7 @@ function startTyping() {
 // --------------------------------------------------
 // ⏱ LOVE TIMER
 
-const startDate = new Date("2024-07-15"); // CHANGE IF NEEDED
+const startDate = new Date("2026-07-25"); // CHANGE IF NEEDED
 
 function updateTimer() {
   const now = new Date();
