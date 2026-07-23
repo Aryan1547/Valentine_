@@ -25,7 +25,7 @@ function addPin(num) {
 function checkPin() {
   const pin = document.getElementById("pin").value;
   const msg = document.getElementById("pinMsg");
-  if (pin === "191221") {
+  if (pin === "24072006") {
     msg.innerText = "Alright then… let’s go ahead, sunshine💗";
     setTimeout(() => nextPage(2), 800);
   } else {
