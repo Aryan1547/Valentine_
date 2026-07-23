@@ -171,14 +171,14 @@ function finalNo() {
 // ✍️ TYPEWRITER (PAGE 3)
 
 const poem = `
-I will love you in ways that feel safe and real 🤍.
- I’ll choose you even from a distance 🌙, stay
-  with you through calls and silence ,🌸🌹 and 
-  hold you with my words when my arms can’t reach 
-  you . In your highs and your lows, in every mood 
-  and every moment, I’ll be there—steadily, deeply,
-   without hesitation 💞. I promise to love you—today,
-    tomorrow, always ♾️💗
+will love you in ways that feel safe and real 🤍.
+I'll choose you even from the darkest moments, because
+your presence is the brightest light I have ever known.
+Watching these days, hours, and minutes tick by makes me
+realize how incredibly lucky I am to share this timeline with you.
+You aren't just a part of my life; you are the peace my heart always needed.
+I promise to cherish every upcoming second with you, 
+standing by you exactly like the stars and moon. ♾️💗
 `;
 
 let index = 0;
