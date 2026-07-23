@@ -201,16 +201,24 @@ function startTyping() {
 // --------------------------------------------------
 // ⏱ LOVE TIMER
 
-const startDate = new Date("2026-07-24"); // CHANGE IF NEEDED
+const targetDate = new Date("2026-07-24T00:00:00"); // Countdown to 24 July 2026
 
 function updateTimer() {
   const now = new Date();
-  let diff = Math.floor((now - startDate) / 1000);
+  let diff = Math.floor((targetDate - now) / 1000);
+
+  if (diff <= 0) {
+    document.getElementById("timer").innerHTML =
+      "0 Days 0 Hours 0 Minutes 0 Seconds";
+    return;
+  }
 
   const days = Math.floor(diff / (3600 * 24));
   diff %= 3600 * 24;
+
   const hours = Math.floor(diff / 3600);
   diff %= 3600;
+
   const minutes = Math.floor(diff / 60);
   const seconds = diff % 60;
 
@@ -219,6 +227,10 @@ function updateTimer() {
     timer.innerHTML = `${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
   }
 }
+
+// Update every second
+updateTimer();
+setInterval(updateTimer, 1000);
 
 // --------------------------------------------------
 // ▶️ PAGE 3 AUTO START
