@@ -171,7 +171,7 @@ function finalNo() {
 // ✍️ TYPEWRITER (PAGE 3)
 
 const poem = `
-will love you in ways that feel safe and real 🤍.
+In ways that feel safe and real 🤍.
 I'll choose you even from the darkest moments, because
 your presence is the brightest light I have ever known.
 Watching these days, hours, and minutes tick by makes me
@@ -201,7 +201,7 @@ function startTyping() {
 // --------------------------------------------------
 // ⏱ LOVE TIMER
 
-const startDate = new Date("2026-07-25"); // CHANGE IF NEEDED
+const startDate = new Date("2026-07-24"); // CHANGE IF NEEDED
 
 function updateTimer() {
   const now = new Date();
